@@ -1,0 +1,32 @@
+body{
+    background:linear-gradient(#000000a3,#000000a3), url('pic.jpg') no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.search-box{
+    text-align:center;
+    margin-top:100px;
+}
+.temperature{
+    color:orangered
+}
+.input-des{
+    width: 200px;
+    padding:10px;
+    background:rgb(151, 173, 184);
+    
+    border: 1px solid rgb(151, 173, 184);;
+    border-radius: 5px;
+    margin-bottom:50px;
+}
+.btn{
+    width:70px;
+    padding:10px;
+    background:rgb(151, 173, 184);
+    
+    border: 1px solid rgb(151, 173, 184);;
+    border-radius: 5px;
+}
+.temperature{
+    text-align:center;
+}

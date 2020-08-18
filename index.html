@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Apps</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="weather-sec">
+        <div class="search-box">
+            <input id="country-search" class="input-des" type="text" placeholder="Enter your city name">
+            <button id="btnn" class="btn">Search</button>
+
+        </div>
+        <div class="temperature">
+            <h1 id="name-country">Dhaka</h1>
+            <h3><span id="cel">38.06</span>&deg;C</h3>
+            <h3 id="description">Cloud</h3>
+
+        </div>
+
+    </section>
+    <script>
+
+        const country=   document.getElementById('country-search');
+          
+          const getbtn = document.getElementById('btnn').addEventListener('click',function(){
+             
+           fetch('https://api.openweathermap.org/data/2.5/weather?q='+country.value+'&appid=61f9726bf372ba3ddfe31b985c942ce2')
+       .then(res => res.json())
+       .then(data =>{
+
+         
+           const wp = data.name  
+           const tem = data.main 
+          const des = data['weather'][0]['description']
+           const res = tem.temp
+           const time = data.dt
+           const weather = Math.round(res-273.15)
+           document.getElementById('name-country').innerText=wp;
+             document.getElementById('cel').innerText=weather+" ";
+             document.getElementById('description').innerText=des;
+          
+          })    
+       })
+   </script>
+</body>
+</html>
